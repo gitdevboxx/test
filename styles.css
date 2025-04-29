@@ -1,5 +1,5 @@
 :root {
-    --chat--color-primary: #4400ff;
+    --chat--color-primary: #33475b;
     --chat--color-primary-shade-50: var(--chat--color-primary);
     --chat--color-primary-shade-100: var(--chat--color-primary);
     --chat--color-secondary: var(--chat--color-primary);
@@ -59,16 +59,12 @@ body {
     height: 98vh;
 }
 
-.chat-message {
-    border-bottom-left-radius: 0;
-}
-
 .chat-message.chat-message-from-user {
     color: var(--chat--color-light) !important;
 }
 
 .chat-message.chat-message-from-bot {
-    color: var(--chat--color-typing) !important;
+    color: var(--chat--color-disabled) !important;
 }
 
 .chat-messages-list {
@@ -83,9 +79,28 @@ body {
 .chat-layout .chat-footer,
 .chat-layout .chat-footer div,
 .chat-layout .chat-body,
-.chat-layout .chat-inputs textarea[data-v-2a7fb1c3],
-.chat-input-send-button[data-v-2a7fb1c3] {
+.chat-input-send-button[data-v-2a7fb1c3]:disabled,
+.chat-layout .chat-inputs textarea[data-v-2a7fb1c3] {
     background: transparent !important;
+}
+
+.chat-input-send-button[data-v-2a7fb1c3] svg {
+    height: 20px;
+}
+
+.chat-input-send-button[data-v-2a7fb1c3]:hover:not(:disabled) {
+    background: var(--chat--color-primary);
+    transform: rotate(-45deg);
+}
+
+.chat-input-send-button[data-v-2a7fb1c3],
+.chat-input-send-button[data-v-2a7fb1c3]:hover:not(:disabled) {
+    background: var(--chat--color-primary);
+    border-radius: 50%;
+    color: var(--chat--color-light);
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
 }
 
 .chat-layout {
