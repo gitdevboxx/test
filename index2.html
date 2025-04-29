@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Mouse Hover Effekt</title>
+        <style>
+            :root {
+                --tw-blur: blur(60px);
+            }
+
+            body {
+                margin: 0;
+                height: 100vh;
+                background-color: rgb(14 9 24 / var(--tw-bg-opacity, 1));
+
+                background-image: radial-gradient(
+                        circle at 30% 140%,
+                        rgba(217, 126, 75, 0.3),
+                        transparent 37%
+                    ),
+                    radial-gradient(
+                        circle at 50% 310%,
+                        #0400ff26,
+                        #a2a68700 78%
+                    ),
+                    linear-gradient(transparent, #0d0a195e),
+                    radial-gradient(circle at 50% -30%, #a85c5c33, #67454500),
+                    radial-gradient(90% 10% at 50% 0, #a85c5c0d, #67454500 90%);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .hover-area {
+                position: relative;
+                width: 800px;
+                height: 300px;
+                background-image: radial-gradient(
+                        circle at 30% 140%,
+                        rgba(217, 126, 75, 0.3),
+                        transparent 37%
+                    ),
+                    radial-gradient(
+                        circle at 50% 310%,
+                        #0400ff26,
+                        #a2a68700 78%
+                    ),
+                    linear-gradient(transparent, #0d0a195e),
+                    radial-gradient(circle at 50% -30%, #a85c5c33, #67454500),
+                    radial-gradient(90% 10% at 50% 0, #a85c5c0d, #67454500 90%);
+                border-radius: 20px;
+                overflow: hidden;
+                border: 1px solid hsla(0, 0%, 100%, 0.16);
+                box-shadow: inset 0 1px #ff8e5d66;
+            }
+
+            .animate {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 600px;
+                height: 600px;
+                border-radius: 50%;
+                background: linear-gradient(to bottom right, #ee4f27, #6b21ef);
+
+                filter: blur(60px);
+                opacity: 0;
+                pointer-events: none;
+                transform: translate(-50%, -50%);
+                transition: opacity 0.8s;
+            }
+
+            .text {
+                position: relative;
+                color: white;
+                text-align: center;
+                line-height: 300px;
+                z-index: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="hover-area">
+            <div class="animate"></div>
+            <div class="text"></div>
+        </div>
+
+        <script>
+            const animate = document.querySelector(".animate");
+            const hoverArea = document.querySelector(".hover-area");
+
+            hoverArea.addEventListener("mouseenter", () => {
+                animate.style.opacity = "0.5";
+            });
+
+            hoverArea.addEventListener("mousemove", (e) => {
+                const rect = hoverArea.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                animate.style.transform = `translate(-50%, -50%) translate(${
+                    x - 50
+                }%, ${y - 50}%)`;
+            });
+
+            hoverArea.addEventListener("mouseleave", () => {
+                animate.style.opacity = "0";
+            });
+        </script>
+    </body>
+</html>
