@@ -54,11 +54,6 @@
     --chat--toggle--size: 64px;
 }
 
-body {
-    background: linear-gradient(135deg, #f8f6ff, #b4b0c3);
-    height: 98vh;
-}
-
 .chat-message.chat-message-from-user {
     color: var(--chat--color-light) !important;
     border-radius: var(--chat--border-radius);
