@@ -14,7 +14,7 @@
     --chat--color-typing: #404040;
 
     --chat--spacing: 1rem;
-    --chat--border-radius: 10px;
+    --chat--border-radius: 20px;
     --chat--transition-duration: 0.15s;
 
     --chat--window--width: 400px;
@@ -59,6 +59,19 @@ body {
     height: 96vh;
 }
 
+.chat-message {
+    color: var(--chat--color-typing) !important;
+    border-bottom-left-radius: 0;
+}
+
+.chat-messages-list {
+    margin-top: 0px;
+}
+
+.chat-message-markdown {
+    font-size: 100%;
+}
+
 .chat-input,
 .chat-layout .chat-footer,
 .chat-layout .chat-footer div,
@@ -73,7 +86,7 @@ body {
 }
 
 .chat-window-wrapper .chat-window .chat-layout {
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 40px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 5px 40px;
     border-radius: var(--chat--border-radius);
 }
 .chat-window-wrapper .chat-window {
@@ -82,7 +95,8 @@ body {
 }
 
 .chat-message {
-    box-shadow: rgba(0, 0, 0, 0.2) 5px 5px 30px;
+    box-shadow: rgba(0, 0, 0, 0.1) 5px 5px 30px;
+    margin: 30px 0;
 }
 
 .chat-layout .chat-header {
@@ -91,6 +105,7 @@ body {
 
 .chat-layout .chat-footer {
     box-shadow: rgba(0, 0, 0, 0.1) -5px -5px 30px;
+    border-top: 0px solid;
 }
 
 .chat-inputs textarea[data-v-2a7fb1c3] {
