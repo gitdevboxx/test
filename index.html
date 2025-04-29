@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>HTML-Seite</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <header>
+            <h1>Testseite!</h1>
+        </header>
+
+        <main>
+            <section>
+                <h2>Test Überschrift</h2>
+                <p>Dies ist ein einfacher Abschnitt.</p>
+            </section>
+
+            <section>
+                <h2>Interessen</h2>
+                <ul>
+                    <li>Musik</li>
+                    <li>Reisen</li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Webseite</p>
+        </footer>
+        <script type="module">
+            import { createChat } from "https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js";
+
+            createChat({
+                webhookUrl:
+                    "http://192.168.188.35:5678/webhook/c8e774f5-4e39-472f-a93e-7752ed67e648/chat",
+                webhookConfig: {
+                    method: "POST",
+                    headers: {},
+                },
+                target: "#n8n-chat",
+                mode: "window",
+                chatInputKey: "chatInput",
+                chatSessionKey: "sessionId",
+                metadata: {},
+                showWelcomeScreen: false,
+                defaultLanguage: "de",
+                initialMessages: ["Wie kann ich dir heute helfen?"],
+                i18n: {
+                    en: {
+                        title: "Hi there!",
+                        subtitle: "",
+                        footer: "",
+                        getStarted: "New Conversation",
+                        inputPlaceholder: "Type your question...",
+                    },
+                    de: {
+                        title: "Hallo!",
+                        subtitle: "",
+                        footer: "",
+                        getStarted: "Neues Gespräch",
+                        inputPlaceholder: "Stelle deine Frage...",
+                    },
+                },
+            });
+        </script>
+    </body>
+</html>
