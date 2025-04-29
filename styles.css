@@ -61,10 +61,14 @@ body {
 
 .chat-message.chat-message-from-user {
     color: var(--chat--color-light) !important;
+    border-radius: var(--chat--border-radius);
+    border-top-right-radius: 0;
 }
 
 .chat-message.chat-message-from-bot {
     color: var(--chat--color-disabled) !important;
+    border-radius: var(--chat--border-radius);
+    border-top-left-radius: 0;
 }
 
 .chat-messages-list {
@@ -100,7 +104,7 @@ body {
     color: var(--chat--color-light);
     width: 40px;
     height: 40px;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .chat-layout {
@@ -131,7 +135,7 @@ body {
 }
 
 .chat-inputs textarea[data-v-2a7fb1c3] {
-    padding: 1rem;
+    padding: 1.3rem;
 }
 
 ::-webkit-scrollbar {
@@ -157,4 +161,9 @@ body {
 
 .chat-window-wrapper .chat-window-toggle {
     box-shadow: 4px 4px 10px #545454, -4px -4px 10px #ffffff;
+    transition: all 0.3s ease;
+}
+
+.chat-window-wrapper .chat-window-toggle svg {
+    transition: all 0.3s ease;
 }
