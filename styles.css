@@ -60,8 +60,15 @@ body {
 }
 
 .chat-message {
-    color: var(--chat--color-typing) !important;
     border-bottom-left-radius: 0;
+}
+
+.chat-message.chat-message-from-user {
+    color: var(--chat--color-light) !important;
+}
+
+.chat-message.chat-message-from-bot {
+    color: var(--chat--color-typing) !important;
 }
 
 .chat-messages-list {
