@@ -58,16 +58,15 @@
                 position: absolute;
                 top: 50%;
                 left: 50%;
-                width: 600px;
-                height: 600px;
+                width: 800px;
+                height: 800px;
                 border-radius: 50%;
                 background: linear-gradient(to bottom right, #ee4f27, #6b21ef);
-
-                filter: blur(60px);
                 opacity: 0;
                 pointer-events: none;
                 transform: translate(-50%, -50%);
-                transition: opacity 0.8s;
+                transition: opacity 0.5s, filter 0.5s;
+                filter: blur(20px);
             }
 
             .text {
@@ -77,20 +76,56 @@
                 line-height: 300px;
                 z-index: 1;
             }
+
+            .inner-container {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: calc(100% - 2px);
+                height: calc(100% - 2px);
+                background-color: rgba(0, 0, 0);
+                border-radius: 18px;
+                overflow: hidden;
+                transform: translate(-50%, -50%);
+                z-index: 1;
+                opacity: 0.4;
+                transition: opacity 0.5s;
+            }
+
+            .effect {
+                aspect-ratio: 1 / 2.2;
+                background-image: linear-gradient(#a13355, #5159d9);
+                border-radius: 800%;
+                filter: blur(130px);
+                left: 50%;
+                max-width: 400px;
+                opacity: 0.45;
+                position: absolute;
+                top: 55%;
+                width: 80%;
+                z-index: -1;
+                transform: translate(-50%, -50%) rotate(10deg);
+            }
         </style>
     </head>
     <body>
+        <div class="effect"></div>
         <div class="hover-area">
             <div class="animate"></div>
-            <div class="text"></div>
+            <div class="inner-container">
+                <div class="text"></div>
+            </div>
         </div>
 
         <script>
             const animate = document.querySelector(".animate");
+            const inner = document.querySelector(".inner-container");
             const hoverArea = document.querySelector(".hover-area");
 
             hoverArea.addEventListener("mouseenter", () => {
-                animate.style.opacity = "0.5";
+                animate.style.opacity = "1";
+                inner.style.opacity = "0.5";
+                animate.style.filter = "blur(100px)";
             });
 
             hoverArea.addEventListener("mousemove", (e) => {
@@ -104,6 +139,8 @@
 
             hoverArea.addEventListener("mouseleave", () => {
                 animate.style.opacity = "0";
+                inner.style.opacity = "0.4";
+                animate.style.filter = "blur(20px)";
             });
         </script>
     </body>
