@@ -3,16 +3,19 @@
     <head>
         <meta charset="UTF-8" />
         <title>Mouse Hover Effekt</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito:wght@400&display=optional"
+            rel="stylesheet"
+        />
         <style>
-            :root {
-                --tw-blur: blur(60px);
-            }
-
             body {
+                font-family: "Nunito", ui-sans-serif, system-ui, sans-serif,
+                    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+                    "Noto Color Emoji";
+
                 margin: 0;
                 height: 100vh;
-                background-color: rgb(14 9 24 / var(--tw-bg-opacity, 1));
-
+                background-color: rgba(14, 9, 24, 1);
                 background-image: radial-gradient(
                         circle at 30% 140%,
                         rgba(217, 126, 75, 0.3),
@@ -70,6 +73,7 @@
             }
 
             .text {
+                font-size: 40px;
                 position: relative;
                 color: white;
                 text-align: center;
@@ -112,9 +116,8 @@
         <div class="effect"></div>
         <div class="hover-area">
             <div class="animate"></div>
-            <div class="inner-container">
-                <div class="text"></div>
-            </div>
+            <div class="inner-container"></div>
+            <div class="text">Native automation</div>
         </div>
 
         <script>
