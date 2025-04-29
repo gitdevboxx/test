@@ -54,6 +54,11 @@
     --chat--toggle--size: 64px;
 }
 
+body {
+    background: linear-gradient(135deg, #f8f6ff, #b4b0c3);
+    height: 96vh;
+}
+
 .chat-input,
 .chat-layout .chat-footer,
 .chat-layout .chat-footer div,
@@ -111,4 +116,8 @@
         var(--chat--color-primary),
         var(--chat--color-primary)
     );
+}
+
+.chat-window-wrapper .chat-window-toggle {
+    box-shadow: 4px 4px 10px #545454, -4px -4px 10px #ffffff;
 }
