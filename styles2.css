@@ -1,0 +1,142 @@
+:root {
+    --color-bg: rgba(14, 9, 24, 1);
+    --gradient-1: rgba(217, 126, 75, 0.3);
+    --gradient-2: #0400ff26;
+    --gradient-3: #a2a68700;
+    --gradient-4: #0d0a195e;
+    --gradient-5: #a85c5c33;
+    --gradient-6: #67454500;
+    --gradient-7: #a85c5c0d;
+    --text-color: white;
+    --border-color: hsla(0, 0%, 100%, 0.16);
+    --shadow-color: #ff8e5d66;
+    --animate-gradient-start: #ee4f27;
+    --animate-gradient-end: #6b21ef;
+    --effect-gradient-start: #a13355;
+    --effect-gradient-end: #5159d9;
+}
+
+body {
+    font-family: "Nunito", ui-sans-serif, system-ui, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+    margin: 0;
+    height: 100vh;
+    background-color: var(--color-bg);
+    background-image: radial-gradient(
+            circle at 30% 140%,
+            var(--gradient-1),
+            transparent 37%
+        ),
+        radial-gradient(
+            circle at 50% 310%,
+            var(--gradient-2),
+            var(--gradient-3) 78%
+        ),
+        linear-gradient(transparent, var(--gradient-4)),
+        radial-gradient(
+            circle at 50% -30%,
+            var(--gradient-5),
+            var(--gradient-6)
+        ),
+        radial-gradient(
+            90% 10% at 50% 0,
+            var(--gradient-7),
+            var(--gradient-6) 90%
+        );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hover-area {
+    position: relative;
+    width: 800px;
+    height: 300px;
+    background-image: radial-gradient(
+            circle at 30% 140%,
+            var(--gradient-1),
+            transparent 37%
+        ),
+        radial-gradient(
+            circle at 50% 310%,
+            var(--gradient-2),
+            var(--gradient-3) 78%
+        ),
+        linear-gradient(transparent, var(--gradient-4)),
+        radial-gradient(
+            circle at 50% -30%,
+            var(--gradient-5),
+            var(--gradient-6)
+        ),
+        radial-gradient(
+            90% 10% at 50% 0,
+            var(--gradient-7),
+            var(--gradient-6) 90%
+        );
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    box-shadow: inset 0 1px var(--shadow-color);
+}
+
+.animate {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 800px;
+    height: 800px;
+    border-radius: 50%;
+    background: linear-gradient(
+        to bottom right,
+        var(--animate-gradient-start),
+        var(--animate-gradient-end)
+    );
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.5s, filter 0.5s;
+    filter: blur(20px);
+}
+
+.text {
+    font-size: 40px;
+    position: relative;
+    color: var(--text-color);
+    text-align: center;
+    line-height: 300px;
+    z-index: 1;
+}
+
+.inner-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    background-color: rgba(0, 0, 0);
+    border-radius: 18px;
+    overflow: hidden;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    opacity: 0.4;
+    transition: opacity 0.5s;
+}
+
+.effect {
+    aspect-ratio: 1 / 2.2;
+    background-image: linear-gradient(
+        var(--effect-gradient-start),
+        var(--effect-gradient-end)
+    );
+    border-radius: 800%;
+    filter: blur(130px);
+    left: 50%;
+    max-width: 400px;
+    opacity: 0.45;
+    position: absolute;
+    top: 55%;
+    width: 80%;
+    z-index: -1;
+    transform: translate(-50%, -50%) rotate(10deg);
+}
